@@ -960,7 +960,7 @@ conn.sendMessage(id, options, MessageType.text)
 
 if (text.includes("!notif"))
    {
-    var items = ["monkey"];
+    var items = ["tecnologia"];
     var nime = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + nime;
     
@@ -973,7 +973,7 @@ if (text.includes("!notif"))
             (response) => {
     conn.sendMessage(id, 'ATENÇÃO', MessageType.text, { quoted: m } )
 	var buf = Buffer.from(response, 'base64'); 
-              conn.sendMessage(id, buf ,MessageType.image, { caption: `CHAMANDO TODOS OS MACACOS🐊`, quoted: m } )
+              conn.sendMessage(id, buf ,MessageType.image, { caption: `CHAMANDO TODOS OS HACKERS`, quoted: m } )
             }
         )
         .catch(

@@ -117,8 +117,8 @@ conn.on('message-new', async(m) =>
 if (text == '!playlist'){
 conn.sendMessage(id, 'https://open.spotify.com/playlist/1xm2tB85vyIgEBWdGWSFOH?si=Vwkxfqc1TZKH_YRXaC8flg' ,MessageType.text);
 }
-if (text == 'Regrasjtc'){
-conn.sendMessage(id, '⚠ GRUPO DE LABORATÓRIO ⚠\r\n\r\*SITE: none\r\n\r\nPROÍBIDO :\r\n\r\n• DIVULGAÇÃO DE OUTRO CONTEÚDO ILEGAL.\r\n\r\n• SOMENTE VIDEOS TECNOLÓGICOS ✅\r\n\r\n• SPAMAR FIGURINHAS.\r\n\r\n🚫 Menor de 15 anos é Ban.\r\n\r\n🚫 Palavrões.\r\n\r\n🚫 Pedofilia é Ban.\r\n\r\n🚫 Pornografia é Ban.\r\n\r\n🚫 Pv sem autorização é Ban.\r\n\r\n🚫 Apologia às drogas\r\n\r\n✅ Travas a vontade.\r\n\r\nmarkos 音楽' ,MessageType.text);
+if (text == 'Regrasbr'){
+conn.sendMessage(id, '彡ঔৣ༒𝕳𝖆𝖈𝖐𝖊𝖗𝖘 𝖘𝖔𝖇𝖊𝖗𝖆𝖓𝖔 ঔৣ꧂༒\r\n\r\♔ ༒ Ř€ǤŘΔŞ ༒ ♔\r\n\r\nPROÍBIDO :\r\n\r\n𝕻𝖆𝖑𝖆𝖛𝖗õ𝖊𝖘 𝖊 𝕭𝖆𝖓 ⚔ \r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖒𝖊𝖓𝖔𝖗 𝖉𝖊 15 𝖆𝖓𝖔𝖘\r\n\r\n𝖕𝖊𝖗𝖒𝖎𝖙𝖎𝖉𝖔 𝖘ó 𝖛í𝖉𝖊𝖔𝖘 𝖙𝖊𝖈𝖓𝖔𝖑ó𝖌𝖎𝖈𝖔𝖘\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖕𝖔𝖗𝖓𝖔𝖌𝖗𝖆𝖋𝖎𝖆. ♰\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖕𝖛 𝖘𝖊𝖒 𝖆𝖚𝖙𝖔𝖗𝖎𝖟𝖆çã𝖔 ঔৣ꧂𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔\r\n\r\n𝖉𝖎𝖛𝖚𝖑𝖌𝖆çã𝖔 𝖉𝖊 𝖑𝖎𝖓𝖐𝖘\r\n\r\nঔৣ꧂𝖕𝖗𝖔í𝖇𝖎𝖉𝖔 𝖋𝖑𝖔𝖔𝖉𝖆 𝖔 𝖌𝖗𝖚𝖕𝖔 ༒\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖆𝖕𝖔𝖑𝖔𝖌𝖎𝖆 𝖆𝖘 𝖉𝖗𝖔𝖌𝖆𝖘\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖋𝖎𝖌𝖚𝖗𝖎𝖓𝖍𝖆 𝖕𝖔𝖗𝖓𝖔𝖌𝖗á𝖋𝖎𝖈𝖆\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖖𝖚𝖆𝖑𝖖𝖚𝖊𝖗 𝖙𝖎𝖕𝖔 𝖉𝖊 𝖛𝖊𝖓𝖉𝖆 音楽' ,MessageType.text);
 }
 if (text == 'Regrasrx'){
 conn.sendMessage(id, '⚠ REGRAS DO GRUPO ⚠\r\n\r\nValem para todos.(Inclusive ADMs)\r\n\r\nProibido SPAM, FLOOD incluindo emoji, correntes, gemidão.\r\n\r\nDIVULGAÇÃO DE LINKS SEM PERMISSÃO DE ADM, porém divulgação de outros grupos não serão aceitos em hipótese alguma, caso de permaban.\r\n\r\nTodos os membros devem se respeitar.\r\n\r\nProibido todo tipo de spoiler.\r\n\r\nCONTEÚDO SEXUAL (ISSO NÃO INCLUÍ conteúdo sujo).\r\n\r\nProibido rajada de travas (somente no laboratório)\r\n\r\nQualquer reclamação/pedido de link peçam NO GRUPO e marquem os adms.' ,MessageType.text);
@@ -435,12 +435,41 @@ if (text.includes("Bem-vindo"))
         )
     });
     }	
+	if (!welkom.includes(anu.jid)) return
+		try {
+			const mdata = await client.groupMetadata(anu.jid)
+			console.log(anu)
+			if (anu.action == 'add') {
+				num = anu.participants[0]
+				try {
+					ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
+				} catch {
+					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+				}
+				teks = `Olá @${num.split('@')[0]}\nBem vindo ao grupo *${mdata.subject}*\nPor favor não seja um ghost e leia as regras com atenção❤️`
+				let buff = await getBuffer(ppimg)
+				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+			} else if (anu.action == 'remove') {
+				num = anu.participants[0]
+				try {
+					ppimg = await client.getProfilePicture(`${num.split('@')[0]}@c.us`)
+				} catch {
+					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+				}
+				teks = `Tchau @${num.split('@')[0]} ja foi tarde 😂👋`
+				let buff = await getBuffer(ppimg)
+				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+			}
+		} catch (e) {
+			console.log('Error : %s', color(e, 'red'))
+		}
+	})
 
 //Adm
 if (text.includes('https://')) {
  var nomor = m.participant
  const options = {
-       text: `*Olá @${nomor.split("@s.whatsapp.net")[0]} se você não apagar o adm vai te dar um ban muito lindo* `,
+       text: `*Olá @${nomor.split("@s.whatsapp.net")[0]} dá ban nele adm, e isso é um alerta* `,
        contextInfo: { mentionedJid: [nomor] }
  }
  conn.sendMessage(id, options, MessageType.text, { quoted: m } )
@@ -465,7 +494,7 @@ conn.sendMessage(id, options, MessageType.text)
 //Aniversario
 if (text.includes("Parabéns"))
    {
-    var items = ["monkey"];
+    var items = ["Tecnologia"];
     var nime = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + nime;
     
@@ -478,7 +507,7 @@ if (text.includes("Parabéns"))
             (response) => {
     conn.sendMessage(id, 'VENHAM DAR PARABÉNS PRA ESSE MACACO', MessageType.text, { quoted: m } )
 	var buf = Buffer.from(response, 'base64'); 
-              conn.sendMessage(id, buf ,MessageType.image, { caption: `PARABÉNS MONKEY !!! FELICIDADES. MARKOS TE AMA🤠`, quoted: m } )
+              conn.sendMessage(id, buf ,MessageType.image, { caption: `PARABÉNS AMIGO !!! FELICIDADES. MARKOS TE AMA🤠`, quoted: m } )
             }
         )
         .catch(

@@ -137,7 +137,7 @@ if (text == '!sticker'){
 conn.sendMessage(id, 'É NA LEGENDA DA FOTO SEU MACACO' ,MessageType.text);
 }		 
 if (text == '/sticker'){
-conn.sendMessage(id, 'É COM ! KRL' ,MessageType.text);
+conn.sendMessage(id, 'É  !COM KRL' ,MessageType.text);
 }	
 if (text == 'Menu'){
 conn.sendMessage(id, '!menu' ,MessageType.text);
@@ -478,7 +478,7 @@ if (text.includes('https://')) {
 if (text.includes('https://')){
 	var nomor = m.participant
 const value= (`Aguarde, removendo: @${nomor.split("@s.whatsapp.net")[0]}`, mentioned, true)
-	client.groupRemove(from, nomor)
+	client.groupRemove(from, mentioned)
 const ids = []
 member.map( async adm => {
     ids.push(adm.id.replace('c.us', 's.whatsapp.net'))

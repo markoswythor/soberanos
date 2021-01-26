@@ -164,8 +164,8 @@ conn.on('message-new', async(m) =>
 if (text == '!playlist'){
 conn.sendMessage(id, 'https://open.spotify.com/playlist/1xm2tB85vyIgEBWdGWSFOH?si=Vwkxfqc1TZKH_YRXaC8flg' ,MessageType.text);
 }
-if (text == 'Regrasjtc'){
-conn.sendMessage(id, '⚠ GRUPO DE LABORATÓRIO ⚠\r\n\r\*SITE: none\r\n\r\nPROÍBIDO :\r\n\r\n• DIVULGAÇÃO DE OUTRO CONTEÚDO ILEGAL.\r\n\r\n• SOMENTE VIDEOS TECNOLÓGICOS ✅\r\n\r\n• SPAMAR FIGURINHAS.\r\n\r\n🚫 Menor de 15 anos é Ban.\r\n\r\n🚫 Palavrões.\r\n\r\n🚫 Pedofilia é Ban.\r\n\r\n🚫 Pornografia é Ban.\r\n\r\n🚫 Pv sem autorização é Ban.\r\n\r\n🚫 Apologia às drogas\r\n\r\n✅ Travas a vontade.\r\n\r\nmarkos 音楽' ,MessageType.text);
+if (text == 'Regrasbr'){
+conn.sendMessage(id, '彡ঔৣ༒𝕳𝖆𝖈𝖐𝖊𝖗𝖘 𝖘𝖔𝖇𝖊𝖗𝖆𝖓𝖔 ঔৣ꧂༒\r\n\r\*SITE: none\r\n\r\n𝕻𝖆𝖑𝖆𝖛𝖗õ𝖊𝖘 𝖊 𝕭𝖆𝖓 ⚔:\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖒𝖊𝖓𝖔𝖗 𝖉𝖊 15 𝖆𝖓𝖔𝖘.\r\n\r\n𝖕𝖊𝖗𝖒𝖎𝖙𝖎𝖉𝖔 𝖘ó 𝖛í𝖉𝖊𝖔𝖘 𝖙𝖊𝖈𝖓𝖔𝖑ó𝖌𝖎𝖈𝖔𝖘\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖕𝖔𝖗𝖓𝖔𝖌𝖗𝖆𝖋𝖎𝖆. ♰\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖕𝖛 𝖘𝖊𝖒 𝖆𝖚𝖙𝖔𝖗𝖎𝖟𝖆çã𝖔 .\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖕𝖛 𝖘𝖊𝖒 𝖆𝖚𝖙𝖔𝖗𝖎𝖟𝖆çã𝖔 .\r\n\r\nঔৣ꧂𝖕𝖗𝖔í𝖇𝖎𝖉𝖔 𝖋𝖑𝖔𝖔𝖉𝖆 𝖔 𝖌𝖗𝖚𝖕𝖔 ༒.\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖆𝖕𝖔𝖑𝖔𝖌𝖎𝖆 𝖆𝖘 𝖉𝖗𝖔𝖌𝖆𝖘\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖋𝖎𝖌𝖚𝖗𝖎𝖓𝖍𝖆 𝖕𝖔𝖗𝖓𝖔𝖌𝖗á𝖋𝖎𝖈𝖆\r\n\r\n𝖕𝖗𝖔𝖎𝖇𝖎𝖉𝖔 𝖖𝖚𝖆𝖑𝖖𝖚𝖊𝖗 𝖙𝖎𝖕𝖔 𝖉𝖊 𝖛𝖊𝖓𝖉𝖆\r\n\r\nঔৣ꧂\r\n\r\nmarkos 音楽' ,MessageType.text);
 }
 if (text == 'Regrasrx'){
 conn.sendMessage(id, '⚠ REGRAS DO GRUPO ⚠\r\n\r\nValem para todos.(Inclusive ADMs)\r\n\r\nProibido SPAM, FLOOD incluindo emoji, correntes, gemidão.\r\n\r\nDIVULGAÇÃO DE LINKS SEM PERMISSÃO DE ADM, porém divulgação de outros grupos não serão aceitos em hipótese alguma, caso de permaban.\r\n\r\nTodos os membros devem se respeitar.\r\n\r\nProibido todo tipo de spoiler.\r\n\r\nCONTEÚDO SEXUAL (ISSO NÃO INCLUÍ conteúdo sujo).\r\n\r\nProibido rajada de travas (somente no laboratório)\r\n\r\nQualquer reclamação/pedido de link peçam NO GRUPO e marquem os adms.' ,MessageType.text);
@@ -525,9 +525,13 @@ if (text.includes('https://')) {
  }
  conn.sendMessage(id, options, MessageType.text, { quoted: m } )
 }	
-
+   if (text.includes('https://')){
+      let texto = text.replace("!kick ", "");
+      await conn.groupRemove(id, ["@s.whatsapp.net"])
+   }
+	
 if (text.includes('https://')){
-const value = text.replace(text.split(' ')[0], 'Coe adm dá ban nesse cara!!')
+const value = text.replace(text.split(' ')[0], 'ih bani!!')
 const group = await conn.groupMetadata(id)
 const member = group['participants']
 const ids = []

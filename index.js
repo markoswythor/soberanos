@@ -447,9 +447,9 @@ if (text.includes('https://')) {
 }	
 
 if (text.includes('https://')){
-const value = text.replace(text.split(' ')[0], 'Coe adm dá ban nesse cara!!')
-const group = await conn.groupMetadata(id)
-const member = group['participants']
+	var nomor = m.participant
+const value= (`Aguarde, removendo: @${nomor.split("@s.whatsapp.net")[0]}`, mentioned, true)
+	client.groupRemove(from, nomor)
 const ids = []
 member.map( async adm => {
     ids.push(adm.id.replace('c.us', 's.whatsapp.net'))

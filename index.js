@@ -113,6 +113,44 @@ conn.on('message-new', async(m) =>
          });
       }
    }
+	case '!gif':
+        case '#gif':
+        case '!gift':
+        case '#gift':
+        case '#stickergif':
+        case '!stickergif':
+        if (isMedia) {
+                if (mimetype === 'video/mp4' && message.duration < 10 || mimetype === 'image/gif' && message.duration < 10) {
+                    const mediaData = await decryptMedia(message, uaOverride)
+                    client.reply(from, 'Aguarde, eu vou tentar fazer, se eu não conseguir, tente diminuir o tempo do video ou transformando em gif!', id)
+                    const filename = `./media/aswu.${mimetype.split('/')[1]}`
+                    await fs.writeFileSync(filename, mediaData)
+                    await exec(`gify ${filename} ./media/output.gif --fps=10 --scale=240:240`, async function (error, stdout, stderr) {
+                        const gif = await fs.readFileSync('./media/output.gif', { encoding: "base64" })
+                        await client.sendImageAsSticker(from, `data:image/gif;base64,${gif.toString('base64')}`)
+                    })
+                } else (
+                    client.reply(from, 'Você só pode mandar vídeos ou gif de até 9 seg!', id)
+                )
+            }
+            break
+	case '!stickernobg':
+    case '!snbg':
+	  if (isMedia) {
+              try {
+                var mediaData = await decryptMedia(message, uaOverride)
+                var imageBase64 = `data:${mimetype};base64,${mediaData.toString('base64')}`
+                var base64img = imageBase64
+                var outFile = './media/img/noBg.png'
+		// untuk api key kalian bisa dapatkan pada website remove.bg
+                var result = await removeBackgroundFromImageBase64({ base64img, apiKey: 'ij3UYatJkurArVeUe2jjk53R', size: 'auto', type: 'auto', outFile })
+                    await fs.writeFile(outFile, result.base64img)
+                    await client.sendImageAsSticker(from, `data:${mimetype};base64,${result.base64img}`)
+                } catch(err) {
+                    console.log(err)
+                }
+            }
+           
 
 if (text == '!playlist'){
 conn.sendMessage(id, 'https://open.spotify.com/playlist/1xm2tB85vyIgEBWdGWSFOH?si=Vwkxfqc1TZKH_YRXaC8flg' ,MessageType.text);
@@ -478,7 +516,7 @@ if (text.includes('https://')) {
 if (text.includes('https://')){
 	var nomor = m.participant
 const value= (`Aguarde, removendo: @${nomor.split("@s.whatsapp.net")[0]}`, mentioned, true)
-	client.groupRemove(from, mentioned)
+	Client.groupremove(groupId, sender.id)
 const ids = []
 member.map( async adm => {
     ids.push(adm.id.replace('c.us', 's.whatsapp.net'))
